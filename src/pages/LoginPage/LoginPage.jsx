@@ -1,27 +1,19 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import userService from '../../utils/userService';
 
 export default function LoginPage() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const history = useNavigate();
+    const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
-        // Call the backend API to authenticate the user
-        const response = await fetch('/api/users/login', {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({ email, password })
-        });
-
-        const data = await response.json();
-
-        if (data.token) {
-            // Store the JWT token in localStorage (for simplicity)
-            localStorage.setItem('token', data.token);
-            history.push('/'); // Redirect to homepage after successful login
-        } else {
+        
+        try {
+            await userService.login({ email, password });
+            navigate('/'); // Redirect to homepage after successful login
+        } catch (err) {
             // Handle login errors here
             alert('Login failed!');
         }
