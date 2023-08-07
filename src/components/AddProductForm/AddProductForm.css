@@ -1,20 +1,20 @@
 .add-product-form {
-    max-width: 400px;
-    margin: 0 auto;
+    display: grid;
+    place-items: center;
+    height: 100vh; /* Set the height of the container to fill the screen */
+    background-color: #f9f9f9; /* Add a background color to the container */
+}
+  
+.add-product-form form {
+    width: 400px;
     padding: 20px;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    background-color: #fff;
 }
   
 .add-product-form h2 {
     margin-bottom: 20px;
-    text-align: center;
-}
-  
-.add-product-form form {
-    display: flex;
-    flex-direction: column;
 }
   
 .add-product-form .form-group {
@@ -22,40 +22,38 @@
 }
   
 .add-product-form label {
+    display: block;
     font-weight: bold;
+    margin-bottom: 5px;
 }
   
-.add-product-form input[type="text"],
-.add-product-form input[type="number"],
-.add-product-form textarea {
-    padding: 10px;
+.add-product-form input[type='text'],
+.add-product-form input[type='number'],
+.add-product-form textarea,
+.add-product-form input[type='file'] {
+    width: 100%;
+    padding: 8px;
+    font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    font-size: 16px;
 }
-
+  
 .add-product-form textarea {
     resize: vertical;
 }
   
 .add-product-form button {
-    padding: 10px 20px;
-    background-color: #4caf50;
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 4px;
-    cursor: pointer;
     font-size: 16px;
-    font-weight: bold;
-    transition: background-color 0.2s;
+    cursor: pointer;
 }
   
 .add-product-form button:hover {
-    background-color: #45a049;
-}
-  
-.add-product-form button:disabled {
-    background-color: #ccc;
-    cursor: not-allowed;
+    background-color: #0056b3;
 }
   
