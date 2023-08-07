@@ -59,7 +59,8 @@ function ProductItem(props) {
       <p>Description: {description}</p>
       <p>Price: ${price}</p>
       <p>Stock: {stock}</p>
-      <button onClick={handleDelete}>Delete</button>
+      {props.isAdmin && (
+        <button onClick={handleDelete}>Delete</button>)}
     </div>
   );
 }

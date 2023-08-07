@@ -9,11 +9,12 @@ import AddProductForm from './components/AddProductForm/AddProductForm';
 import ProductItem from './components/ProductItem/ProductItem';
 import Cart from './components/Cart/Cart';
 import tokenService from './utils/tokenService';
+import userService from './utils/userService';
 import { createProduct, getAllProducts } from './utils/productApi';
 import './App.css';
 
 function App() {
-  const [user, setUser] = useState(tokenService.getToken());
+  const [user, setUser] = useState(userService.getUser());
   const isAdmin = user && user.isAdmin; // Define isAdmin based on the user role
 
   const [products, setProducts] = useState([]);
@@ -52,7 +53,7 @@ function App() {
           />
           <Route 
             path="/products/:id"
-            element={<ProductItem user={user} />}
+            element={<ProductItem user={user} isAdmin={isAdmin} />} // Pass isAdmin prop to ProductItem
           />
           <Route 
             path="/cart"

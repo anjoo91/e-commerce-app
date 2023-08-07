@@ -18,7 +18,7 @@ function ProductGallery({ products, isAdmin, handleDeleteProduct, handleAddToCar
             <button className="cart-btn" onClick={() => handleAddToCart(product)}>
               Add To Cart
             </button>
-            {isAdmin ? null:
+            {isAdmin &&
               (<button className="delete-btn" onClick={() => handleDeleteProduct(product._id)}>
                 Delete Product
               </button>)}

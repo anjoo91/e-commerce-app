@@ -73,7 +73,7 @@ function ProductPage({ user }) {
       ) : (
         <p>No products available.</p>
       )}
-      {isAdmin ? null : (
+      {isAdmin && (
       <Link to="/products/add-product">
         <button>Add Product</button>
       </Link>)}
