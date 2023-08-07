@@ -18,21 +18,28 @@ There are some basic functionalities to found on this app:
     * Admin users can delete products from the website
 
 ### Getting Started:
+
 trello: https://trello.com/b/yJjVbyYQ/e-commerce-app
+
 gitHub: https://github.com/anjoo91/e-commerce-app
 
 
 ### ScreenShots:
-![Home Page](https://pasteboard.co/BhQiv1gK8j29.png "Landing Page")
 
-![Products Page](https://pasteboard.co/yiHBAnN2RGw5.png "Products Page")
+![Home Page](https://i.postimg.cc/SR2q3RW7/landing-page-mern.png "Landing Page")
 
-![Add Products Page](https://pasteboard.co/OC7QOlfhqrrF.png "Form Page")
+![Products Page](https://i.postimg.cc/25S5TzXT/products-page-mern.png "Products Page")
 
-![Cart Page](https://pasteboard.co/kChrGwJgxkot.png "Cart Page")
+![Add Products Page](https://i.postimg.cc/8zs3b9mM/addform-mern.png "Form Page")
 
+![Cart Page](https://i.postimg.cc/wxQBmf29/shoppingcart-mern.png "Cart Page")
+
+![Login Page](https://i.postimg.cc/0290Y4qn/Login-Form-Mern.png "Login Page")
+
+![SignUp Page](https://i.postimg.cc/6pgZmjFD/signup-mern.png "SignUp Page")
 
 ### Technologies Used:
+
 * MVC
 * MongoDB (Mongoose)
 * Express.JS
