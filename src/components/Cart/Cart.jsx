@@ -1,23 +1,28 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import { CartContext } from '../../contexts/CartContext/CartContext';
+import './Cart.css';
 
-function CartPage() {
-  const [cartItems, setCartItems] = useState([]);
+function Cart() {
+  const { cart, removeFromCart } = useContext(CartContext);
 
-  // Function to add a product to the cart
-  const addToCart = (product) => {
-    setCartItems([...cartItems, product]);
+  const handleRemove = (productId) => {
+    removeFromCart(productId);
   };
 
   return (
-    <div className="cart-page">
-      <h2>Cart</h2>
-      {cartItems.length === 0 ? (
-        <p>Cart is empty.</p>
+    <div className="cart">
+      <h2>Shopping Cart</h2>
+      {cart.length === 0 ? (
+        <p>Your cart is empty.</p>
       ) : (
         <ul>
-          {cartItems.map((item) => (
+          {cart.map((item) => (
             <li key={item._id}>
-              <span>{item.name}</span> - <span>${item.price}</span>
+              <div className="product-info">
+                <h3>{item.name}</h3>
+                <p>Price: ${item.price}</p>
+              </div>
+              <button className="remove-btn" onClick={() => handleRemove(item._id)}>Remove</button>
             </li>
           ))}
         </ul>
@@ -26,4 +31,4 @@ function CartPage() {
   );
 }
 
-export default CartPage;
+export default Cart;

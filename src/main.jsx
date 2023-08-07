@@ -5,11 +5,14 @@ import App from "./App";
 import 'semantic-ui-css/semantic.min.css'
 import "./index.css";
 import { BrowserRouter as Router } from "react-router-dom";
+import { CartProvider } from './contexts/CartContext/CartContext';
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Router>
-      <App />
+      <CartProvider>
+        <App />
+      </CartProvider>
     </Router>
   </React.StrictMode>
 );

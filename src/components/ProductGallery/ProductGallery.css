@@ -29,10 +29,10 @@
     margin: 5px 0;
 }
   
-.product-info button {
+.product-info .cart-btn {
     margin-top: 10px;
     padding: 8px 16px;
-    background-color: #f44336;
+    background-color: #4caf50; /* Green color for Add to Cart button */
     color: #fff;
     border: none;
     cursor: pointer;
@@ -40,11 +40,28 @@
     font-weight: bold;
 }
   
-.product-info button:hover {
-    background-color: #d32f2f;
+.product-info .cart-btn:hover {
+    background-color: #45a049; /* Darker green color on hover */
+}
+  
+.product-info .delete-btn {
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 8px 16px;
+    background-color: #f44336; /* Red color for Delete Product button */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+}
+  
+.product-info .delete-btn:hover {
+    background-color: #d32f2f; /* Darker red color on hover */
 }
   
 .product-info button:disabled {
     background-color: #ccc;
     cursor: not-allowed;
 }
+  

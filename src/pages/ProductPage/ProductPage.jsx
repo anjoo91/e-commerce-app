@@ -4,6 +4,8 @@ import { getAllProducts, deleteProduct, createProduct } from '../../utils/produc
 import './ProductPage.css';
 import Header from '../../components/Header/Header';
 import ProductGallery from '../../components/ProductGallery/ProductGallery';
+import { CartContext } from '../../contexts/CartContext/CartContext';
+
 
 function ProductPage({ user }) {
   const [products, setProducts] = useState([]);
@@ -16,7 +18,7 @@ function ProductPage({ user }) {
   }, []);
 
   const isAdmin = user && user.isAdmin;
-//   const { addToCart } = useContext(CartContext); // Access the addToCart function from the CartContext
+  const { addToCart } = useContext(CartContext); // Access the addToCart function from the CartContext
 
   //C(R)UD
   const getProducts = async() => {
@@ -66,7 +68,7 @@ function ProductPage({ user }) {
           products={products}
           isAdmin={isAdmin}
           handleDeleteProduct={handleDeleteProduct}
-          handleAddToCart={handleAddToCart}
+          handleAddToCart={addToCart}
         />
       ) : (
         <p>No products available.</p>

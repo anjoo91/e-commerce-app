@@ -34,7 +34,7 @@ async function index(req, res) {
   }
 };
 
-// controllers/products.js
+// Creating products
 async function create(req, res) {
   const user = await User.findById(req.user._id); // fetch user from token
     
