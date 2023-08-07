@@ -24,48 +24,55 @@ function requireAdmin(req, res, next) {
     next();
 };
 
-// Create a new product
-async function create(req, res) {
-  try {
-    const user = await User.findById(req.user._id); // fetch user from token
-    if (!user.isAdmin) {
-      return res.status(403).json({ error: "Only admin can add a product." });
-    }
-
-    if (!req.file) return res.status(400).json({ error: "Please upload a product image." });
-
-    const filePath = `e-commerce-js/products/${uuidv4()}-${req.file.originalname}`;
-    const params = { Bucket: BUCKET_NAME, Key: filePath, Body: req.file.buffer };
-
-    s3.upload(params, async function (err, data) {
-      if (err) {
-        console.log(err);
-        return res.status(400).json({ error: "Error uploading to AWS." });
-      }
-
-      const product = new Product({
-        ...req.body,
-        image: data.Location,
-        user: req.user._id,
-      });
-
-      await product.save();
-      res.status(201).json(product);
-    });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
-  }
-};
-
 // List all products
 async function index(req, res) {
   try {
-    const products = await Product.find({}).populate('user');
+    const products = await Product.find({}).populate('user').exec();
     res.status(200).json(products);
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
 };
+
+// controllers/products.js
+async function create(req, res) {
+  const user = await User.findById(req.user._id); // fetch user from token
+    
+  if (!user.isAdmin) {
+    return res.status(403).json({ error: "Only admin can add a product." });
+  }
+
+  if (!req.file) return res.status(400).json({ error: "Please upload a product image." });
+
+  const filePath = `e-commerce-js/products/${uuidv4()}-${req.file.originalname}`;
+  const params = { Bucket: BUCKET_NAME, Key: filePath, Body: req.file.buffer };
+
+  s3.upload(params, async function (err, data) {
+    if (err) {
+      console.log(err);
+      return res.status(400).json({ error: "Error uploading to AWS." });
+    }
+
+    try {
+      const product = await Product.create({
+        name: req.body.name,
+        image: data.Location,
+        brand: req.body.brand,
+        category: req.body.category,
+        description: req.body.description,
+        price: req.body.price,
+        stock: req.body.stock,
+        user: req.user,
+      });
+
+      await product.populate('user');
+      res.status(201).json({ data: product });
+    } catch (error) {
+      res.status(500).json({ error: error.message });
+    }
+  });
+}
+
 
 // Update a product
 async function update(req, res) {
@@ -99,7 +106,8 @@ async function update(req, res) {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
-};
+}
+
 
 // Delete a product
 async function remove(req, res) {
@@ -121,7 +129,7 @@ async function remove(req, res) {
   }
 };
 
-// Get a single product
+
 async function show(req, res) {
   try {
     const product = await Product.findById(req.params.id).populate('user');
@@ -132,5 +140,5 @@ async function show(req, res) {
   } catch (error) {
     res.status(500).json({ error: error.message });
   }
-};
+}
 

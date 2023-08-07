@@ -10,9 +10,14 @@ require("./config/database");
 
 const app = express();
 
+const userRouter = require("./routes/api/users")
+const productRouter = require('./routes/api/products')
 // add in when the app is ready to be deployed
 // app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(logger("dev"));
+
+
+// This handles http requests with json in body, the parses the req.body from json into an object
 app.use(express.json());
 
 
@@ -21,8 +26,8 @@ app.use(express.json());
 // the user information to req.user
 app.use(require("./config/auth"));
 // api routes must be before the "catch all" route
-app.use("/api/users", require("./routes/api/users"));
-app.use("/api/products", require("./routes/api/products")); // Added the products route
+app.use("/api/users", userRouter);
+app.use('/api/products', productRouter);
 
 // "catch all" route
 app.get('/*', function(req, res) {

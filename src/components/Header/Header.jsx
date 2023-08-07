@@ -1,39 +1,76 @@
-import { useState, useEffect } from 'react';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import { FaShoppingCart, FaUser } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react';
+import { Link, useLocation } from 'react-router-dom';
+import { useMediaQuery } from 'react-responsive';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import './Header.css';
 
-export default function Header() {
-    const [isLoggedIn, setIsLoggedIn] = useState(false);
+function Header({ user, handleLogout }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
+  const location = useLocation();
 
-    useEffect(() => {
-        const token = localStorage.getItem('token');
-        setIsLoggedIn(!!token); // Convert token to boolean to check if user is logged in
-    }, []);
+  useEffect(() => {
+    setIsOpen(false);
+  }, [location]);
 
-    const handleLogout = () => {
-        localStorage.removeItem('token');
-        setIsLoggedIn(false);
-    };
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
-    return (
-        <header>
-          <Navbar bg='dark' variant='dark' expand='md' collapseOnSelect>
-            <Container>
-                <Navbar.Brand href="/">GA Shop</Navbar.Brand>
-                <Navbar.Toggle aria-controls='basic-navbar-nav'/>
-                <Navbar.Collapse id="navbar-nav">
-                    <Nav className="ms-auto">
-                        <Nav.Link href="/cart"><FaShoppingCart />Cart</Nav.Link>
-                        {
-                            isLoggedIn ? 
-                            <Nav.Link onClick={handleLogout}><FaUser />Sign Out</Nav.Link>
-                            :
-                            <Nav.Link href="/login"><FaUser />Sign In</Nav.Link>
-                        }
-                    </Nav>
-                </Navbar.Collapse>
-            </Container>
-          </Navbar>
-        </header>
-    );
-};
+  return (
+    <header className="header">
+      <div className="container">
+        <nav className="navbar">
+          <div className="navbar-logo">
+            <Link to="/">OnTime Watch Store</Link>
+          </div>
+          {isMobile ? (
+            <div className="navbar-menu" onClick={toggleMenu}>
+              {isOpen ? (
+                <FontAwesomeIcon icon={faTimes} />
+              ) : (
+                <FontAwesomeIcon icon={faBars} />
+              )}
+            </div>
+          ) : (
+            <div className="navbar-links">
+              <Link to="/">Home</Link>
+              <Link to="/products">Products</Link>
+              <Link to="/cart">Cart</Link>
+              {user ? (
+                <>
+                  <Link to="/order-history">Order History</Link>
+                  <Link to="/login" onClick={handleLogout}>
+                    Sign Out
+                  </Link>
+                </>
+              ) : (
+                <Link to="/login">Sign In</Link>
+              )}
+            </div>
+          )}
+        </nav>
+        {isMobile && isOpen && (
+          <div className="mobile-menu">
+            <Link to="/">Home</Link>
+            <Link to="/products">Products</Link>
+            <Link to="/cart">Cart</Link>
+            {user ? (
+              <>
+                <Link to="/order-history">Order History</Link>
+                <Link to="/login" onClick={handleLogout}>
+                  Sign Out
+                </Link>
+              </>
+            ) : (
+              <Link to="/login">Sign In</Link>
+            )}
+          </div>
+        )}
+      </div>
+    </header>
+  );
+}
+
+export default Header;

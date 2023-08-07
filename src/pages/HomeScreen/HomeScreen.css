@@ -1,28 +1,31 @@
-.container {
-    width: 80%;
-    margin: 0 auto;
-}
-
-.products-row {
+/* HomeScreen.css */
+.home-container {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: gray;
+    width: 100vw;
+    height: 40vw; /* Increase the height to accommodate the store name */
+    margin: 0;
 }
-
-.product-card {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    margin-bottom: 20px;
-    width: 23%; /* 4 cards with a little gap in between */
-    transition: transform 0.2s;
-}
-
-.product-card:hover {
-    transform: scale(1.03);
-}
-
-.product-card img {
+  
+.banner {
+    display: flex;
+    align-items: center; /* Center the banner image horizontally */
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    max-width: 100%;
+    overflow: hidden;
 }
+  
+.banner img {
+    width: 100%;
+    height: auto;
+}
+  
+.store-name {
+    font-size: 2rem;
+    margin-top: 10px; /* Adjust the margin to provide more spacing */
+    color: white;
+}
+  
