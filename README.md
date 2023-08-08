@@ -6,21 +6,25 @@ There are some basic functionalities to found on this app:
 * Log-In & Sign-Up
     * User credentials are stored in mongoose
     * Some users can be specified to be an admin
-* Read Products
+* Rotating Banner on Home Screen
+    * Product images are automatically cycled through as a banner via updating states
+* Admin Authentication
+    * Certain CRUD functions and buttons are available only if user is an admin
+* C(R)UD - Read Products
     * All users can read/see products added to the website
+* (C)RUD - Create Products
+    * Admin users can add products to the website
+* CRU(D) - Delete Products
+    * Admin users can delete products from the website
 * Add Products to cart
     * All users can add products to their cart
 * Remove Products from cart
     * All users can remove products from their cart
-* Create Products
-    * Admin users can add products to the website
-* Delete Products
-    * Admin users can delete products from the website
 * Checkout
-    * Simulated checkout success - no API is integrated as of now.
+    * Simulated checkout success - no API is integrated as of now
 * Order History
-    * Cart items that have gone through checkout are marked as paid.
-    * Paid items are added to the Order History page.
+    * Cart items that have gone through checkout are marked as paid
+    * Paid items are added to the Order History page
 
 ### Getting Started:
 
