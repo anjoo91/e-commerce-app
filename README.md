@@ -25,6 +25,7 @@ There are some basic functionalities to found on this app:
 * Order History
     * Cart items that have gone through checkout are marked as paid
     * Paid items are added to the Order History page
+    * Order status is displayed as a progress bar for each order
 
 ### Getting Started:
 
