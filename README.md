@@ -87,3 +87,15 @@ gitHub: https://github.com/anjoo91/e-commerce-app
 * Node.JS
 * AWS S3
 * JWT Authentication
+* CSS
+
+### IceBox:
+
+* Add shipping address form
+* Integrate Stripe/Paypal API
+* Add confirmation function with email API
+* Update homescreen banner with new images in a new model
+* Add more styling
+* Add search function & search bar in navbar
+* Add more icons on navbar styling
+
