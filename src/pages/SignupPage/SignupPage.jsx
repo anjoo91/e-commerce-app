@@ -1,9 +1,7 @@
-// SignupPage.jsx
-
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import userService from '../../utils/userService';
-import './SignupPage.css'; // Import the new CSS file
+import './SignupPage.css';
 
 export default function SignupPage() {
   const [username, setUsername] = useState('');

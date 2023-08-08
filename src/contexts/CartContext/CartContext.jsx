@@ -4,6 +4,7 @@ const CartContext = createContext();
 
 function CartProvider({ children }) {
   const [cart, setCart] = useState([]);
+  const [paidItems, setPaidItems] = useState([]);
 
   const addToCart = (product) => {
     const existingProduct = cart.find((item) => item._id === product._id);
@@ -20,8 +21,14 @@ function CartProvider({ children }) {
     console.log('Removing from cart:', productId);
   };
 
+  // mark items as paid and move them to paidItems
+  const markAsPaid = (cartItems) => {
+    setPaidItems((prevPaidItems) => [...prevPaidItems, ...cartItems]);
+    setCart([]);
+  };
+
   return (
-    <CartContext.Provider value={{ cart, addToCart, removeFromCart }}>
+    <CartContext.Provider value={{ cart, addToCart, removeFromCart, paidItems, markAsPaid }}>
       {children}
     </CartContext.Provider>
   );

@@ -1,7 +1,16 @@
-.cart-container {
+body {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 100vh;
 }
   
@@ -12,6 +21,8 @@
     border-radius: 8px;
     background-color: #fff;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0 auto;
+    margin-bottom: 40px;
 }
   
 .cart h2 {
@@ -19,6 +30,7 @@
     margin-bottom: 20px;
     font-size: 24px;
     color: #333;
+    text-align: center;
 }
   
 .cart ul {
@@ -64,9 +76,6 @@
   
 .cart .remove-btn {
     margin-left: auto;
-}
-  
-.cart button {
     background-color: #f44336;
     color: #fff;
     border: none;
@@ -76,7 +85,60 @@
     transition: background-color 0.2s ease;
 }
   
-.cart button:hover {
+.cart .remove-btn:hover {
     background-color: #d32f2f;
+}
+  
+.payment-form {
+    margin-top: 20px;
+    text-align: center;
+    max-width: 400px;
+    margin:0 auto;
+}
+  
+.payment-form h2 {
+    margin-bottom: 20px;
+}
+  
+.payment-form form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  
+.payment-form .form-group {
+    width: 100%;
+    max-width: 400px;
+    margin-bottom: 15px;
+}
+  
+.payment-form label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+  
+.payment-form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    font-size: 16px;
+    color: #333;
+}
+  
+.payment-form button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+  
+.payment-form button:hover {
+    background-color: #0056b3;
 }
   

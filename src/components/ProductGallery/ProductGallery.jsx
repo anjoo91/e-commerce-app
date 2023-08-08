@@ -8,7 +8,7 @@ function ProductGallery({ products, isAdmin, handleDeleteProduct, handleAddToCar
     <div className="product-gallery">
       {products.map((product) => (
         <div className="product-card" key={product._id}>
-          <Link to={`/products/${product._id}`}> {/* Link to the individual product page */}
+          <Link to={`/products/${product._id}`}> {/* Link to the product details page */}
             <img src={product.image} alt={product.name} />
           </Link>
           <div className="product-info">

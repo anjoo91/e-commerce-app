@@ -1,0 +1,77 @@
+.order-history {
+    max-width: 800px;
+    padding: 20px;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    text-align: center; /* Center the contents horizontally */
+}
+  
+.order-history h2 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+}
+  
+.order-history ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+  
+.order-history li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #e1e1e1;
+}
+  
+.order-history li:last-child {
+    border-bottom: none;
+}
+  
+.order-history img {
+    max-width: 80px;
+    margin-right: 10px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.order-history .product-info {
+    flex: 1;
+    margin-right: 20px;
+    text-align: left;
+}
+
+.order-history .product-info h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+  
+.order-history .product-info p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+  
+.order-progress-bar {
+    display: flex;
+    justify-content: center;
+}
+  
+.progress-step {
+    padding: 5px 10px;
+    border: 1px solid #e1e1e1;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+  
+.progress-step.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}

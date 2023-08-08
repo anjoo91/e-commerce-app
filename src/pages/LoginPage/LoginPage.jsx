@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import userService from '../../utils/userService';
-import './LoginPage.css'; // Import the CSS file
+import './LoginPage.css';
 
 export default function LoginPage() {
   const [email, setEmail] = useState('');
@@ -21,8 +21,8 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="login-container"> {/* Add the login-container div */}
-      <div className="login-form"> {/* Add the login-form div */}
+    <div className="login-container">
+      <div className="login-form">
         <h2>Login</h2>
         <form onSubmit={handleLogin}>
           <div>

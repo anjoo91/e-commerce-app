@@ -8,6 +8,7 @@ import SignupPage from './pages/SignupPage/SignupPage';
 import AddProductForm from './components/AddProductForm/AddProductForm';
 import ProductItem from './components/ProductItem/ProductItem';
 import Cart from './components/Cart/Cart';
+import OrderHistory from './components/OrderHistory/OrderHistory';
 import tokenService from './utils/tokenService';
 import userService from './utils/userService';
 import { createProduct, getAllProducts } from './utils/productApi';
@@ -58,6 +59,10 @@ function App() {
           <Route 
             path="/cart"
             element={<Cart user={user} />}
+          />
+          <Route 
+            path="/order-history"
+            element={<OrderHistory user={user} />}
           />
           <Route path="/login" element={<LoginPage setUser={setUser} />} />
           <Route path="/signup" element={<SignupPage />} />

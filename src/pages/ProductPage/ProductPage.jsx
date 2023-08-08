@@ -9,7 +9,7 @@ import { CartContext } from '../../contexts/CartContext/CartContext';
 
 function ProductPage({ user }) {
   const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true); // New state to track loading state
+  const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [cart, setCart] = useState([]);
 

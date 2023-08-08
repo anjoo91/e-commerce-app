@@ -2,7 +2,6 @@
     display: grid;
     place-items: center;
     height: 100vh; /* Set the height of the container to fill the screen */
-    background-color: #f9f9f9; /* Add a background color to the container */
 }
   
 .signup-form {

@@ -1,10 +1,9 @@
-import React, { useState, useEffect} from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { deleteProduct } from '../../utils/productApi';
 import './ProductItem.css';
 
 function ProductItem(props) {
-  // Fetch the product data using the useParams() hook
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [error, setError] = useState('');
@@ -28,17 +27,15 @@ function ProductItem(props) {
     fetchProduct();
   }, [id]);
 
-  // CRU(D)
   const handleDelete = async () => {
     try {
       await deleteProduct(id);
-      // Redirect to the product list page after successful deletion
       navigate('/products');
     } catch (error) {
       setError('Error deleting product.');
     }
   };
-  
+
   if (!product) {
     return <p>Loading...</p>;
   }
@@ -47,20 +44,22 @@ function ProductItem(props) {
     return <p>{error}</p>;
   }
 
-  // let's just save ourselves from typing product.blah everytime...
   const { name, brand, category, description, price, stock, image } = product;
 
   return (
     <div className="product-item-page">
       <h2>{name}</h2>
       <img src={image} alt={name} />
+      <p className="description">{description}</p>
       <p>Brand: {brand}</p>
       <p>Category: {category}</p>
-      <p>Description: {description}</p>
-      <p>Price: ${price}</p>
-      <p>Stock: {stock}</p>
+      <p className="price">Price: ${price}</p>
+      <p className="stock">Stock: {stock}</p>
       {props.isAdmin && (
-        <button onClick={handleDelete}>Delete</button>)}
+        <div className="delete-btn-container">
+          <button className="delete-btn" onClick={handleDelete}>Delete</button>
+        </div>
+      )}
     </div>
   );
 }

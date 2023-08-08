@@ -16,6 +16,11 @@ There are some basic functionalities to found on this app:
     * Admin users can add products to the website
 * Delete Products
     * Admin users can delete products from the website
+* Checkout
+    * Simulated checkout success - no API is integrated as of now.
+* Order History
+    * Cart items that have gone through checkout are marked as paid.
+    * Paid items are added to the Order History page.
 
 ### Getting Started:
 
@@ -26,17 +31,25 @@ gitHub: https://github.com/anjoo91/e-commerce-app
 
 ### ScreenShots:
 
-![Home Page](https://i.postimg.cc/SR2q3RW7/landing-page-mern.png "Landing Page")
+![Home Page](https://i.postimg.cc/wBKdC3Z2/landing-page-mern.png "Landing Page")
 
-![Products Page](https://i.postimg.cc/25S5TzXT/products-page-mern.png "Products Page")
+![Admin Products Page](https://i.postimg.cc/05t18Vhb/products-page-mern.png "Admin Products Page")
 
-![Add Products Page](https://i.postimg.cc/8zs3b9mM/addform-mern.png "Form Page")
+![Non-Admin Product Page](https://i.postimg.cc/jjTF6fBp/products-not-admin-page-mern.png "Non-Admin Products Page")
 
-![Cart Page](https://i.postimg.cc/wxQBmf29/shoppingcart-mern.png "Cart Page")
+![Product Detail Page](https://i.postimg.cc/3xYqmpsP/products-detail-page-mern.png "Product Detail Page")
 
-![Login Page](https://i.postimg.cc/0290Y4qn/Login-Form-Mern.png "Login Page")
+![Add Product Page](https://i.postimg.cc/3N2LDJn8/addform-mern.png "Add Product Form Page")
 
-![SignUp Page](https://i.postimg.cc/6pgZmjFD/signup-mern.png "SignUp Page")
+![Cart Page](https://i.postimg.cc/ZKF7bnWj/cart-page-mern.png "Cart Page")
+
+![Order History Page](https://i.postimg.cc/KvvLT890/Order-History-page-mern.png "Order History Page")
+
+![Login Page](https://i.postimg.cc/52DFDqfr/Login-Form-Mern.png "Login Page")
+
+![SignUp Page](https://i.postimg.cc/RFL63kwr/signup-mern.png "SignUp Page")
+
+
 
 ### Technologies Used:
 
