@@ -31,21 +31,39 @@ gitHub: https://github.com/anjoo91/e-commerce-app
 
 ### ScreenShots:
 
+##### Home Page:
+
 ![Home Page](https://i.postimg.cc/wBKdC3Z2/landing-page-mern.png "Landing Page")
+
+##### Products Page (Admin):
 
 ![Admin Products Page](https://i.postimg.cc/05t18Vhb/products-page-mern.png "Admin Products Page")
 
+##### Products Page (Non-Admin):
+
 ![Non-Admin Product Page](https://i.postimg.cc/jjTF6fBp/products-not-admin-page-mern.png "Non-Admin Products Page")
+
+##### Product Detail Page (Admin):
 
 ![Product Detail Page](https://i.postimg.cc/3xYqmpsP/products-detail-page-mern.png "Product Detail Page")
 
+##### Add Product Page:
+
 ![Add Product Page](https://i.postimg.cc/3N2LDJn8/addform-mern.png "Add Product Form Page")
+
+##### Shopping Cart Page:
 
 ![Cart Page](https://i.postimg.cc/ZKF7bnWj/cart-page-mern.png "Cart Page")
 
+##### Order History Page:
+
 ![Order History Page](https://i.postimg.cc/KvvLT890/Order-History-page-mern.png "Order History Page")
 
+##### Log In Page:
+
 ![Login Page](https://i.postimg.cc/52DFDqfr/Login-Form-Mern.png "Login Page")
+
+##### Sign Up Page:
 
 ![SignUp Page](https://i.postimg.cc/RFL63kwr/signup-mern.png "SignUp Page")
 
