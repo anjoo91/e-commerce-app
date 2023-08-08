@@ -52,6 +52,10 @@ gitHub: https://github.com/anjoo91/e-commerce-app
 
 ![Product Detail Page](https://i.postimg.cc/3xYqmpsP/products-detail-page-mern.png "Product Detail Page")
 
+##### Product Detail Page (Non-Admin):
+
+![Non-Admin Product Detail Page](https://i.postimg.cc/W3x5YJh6/products-not-admin-detail-page-mern.png "Non-Admin Product Detail Page")
+
 ##### Add Product Page:
 
 ![Add Product Page](https://i.postimg.cc/3N2LDJn8/addform-mern.png "Add Product Form Page")
