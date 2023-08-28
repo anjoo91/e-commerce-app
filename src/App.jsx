@@ -38,6 +38,12 @@ function App() {
     }
   };
 
+  useEffect(() => {
+    // Populate user if already logged in
+    const userFromToken = userService.getUser();
+    setUser(userFromToken);
+  }, []);
+
   return (
     <div className="app">
       <Header user={user} handleLogout={handleLogout} />
@@ -64,7 +70,7 @@ function App() {
             path="/order-history"
             element={<OrderHistory user={user} />}
           />
-          <Route path="/login" element={<LoginPage setUser={setUser} />} />
+          <Route path="/login" element={<LoginPage onLogin={handleLogin} />} />
           <Route path="/signup" element={<SignupPage />} />
         </Routes>
       </main>
