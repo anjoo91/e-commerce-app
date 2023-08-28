@@ -18,6 +18,7 @@ function signup(user) {
   .then(({token}) => tokenService.setToken(token));
   // The above could have been written as
   //.then((token) => token.token);
+  window.location.reload();
 }
 
 function getUser() {
@@ -40,6 +41,7 @@ function login(creds) {
     throw new Error('Bad Credentials!');
   })
   .then(({token}) => tokenService.setToken(token));
+  window.location.reload();
 }
 
 export default {
