@@ -10,12 +10,12 @@ export default function LoginPage() {
   
   const handleLogin = async (e) => {
     e.preventDefault();
-
+    
     try {
-      await userService.login({ email, password });
+      // This will call handleLogin in App.jsx and update the user state
+      await onLogin({ email, password });
       navigate('/'); // Redirect to homepage after successful login
     } catch (err) {
-      // Handle login errors here
       alert('Login failed!');
     }
   };

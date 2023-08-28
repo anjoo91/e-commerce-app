@@ -21,6 +21,18 @@ function App() {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState('');
 
+  // Add this function in App.jsx
+const handleLogin = async (credentials) => {
+  try {
+    await userService.login(credentials);
+    const userFromToken = userService.getUser();
+    setUser(userFromToken);
+  } catch (err) {
+    console.error('Invalid credentials', err);
+  }
+};
+
+
   const handleLogout = () => {
     tokenService.removeToken();
     setUser(null);
