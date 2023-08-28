@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import userService from '../../utils/userService';
 import './LoginPage.css';
 
-export default function LoginPage() {
+export default function LoginPage({ onLogin }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();

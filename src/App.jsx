@@ -21,16 +21,16 @@ function App() {
   const [products, setProducts] = useState([]);
   const [error, setError] = useState('');
 
-  // Add this function in App.jsx
-const handleLogin = async (credentials) => {
-  try {
-    await userService.login(credentials);
-    const userFromToken = userService.getUser();
-    setUser(userFromToken);
-  } catch (err) {
-    console.error('Invalid credentials', err);
-  }
-};
+  const handleLogin = async (credentials) => {
+    console.log('handleLoginCalled');
+    try {
+      await userService.login(credentials);
+      const userFromToken = userService.getUser();
+      setUser(userFromToken);
+    } catch (err) {
+      console.error('Invalid credentials', err);
+    }
+  };
 
 
   const handleLogout = () => {
@@ -49,12 +49,6 @@ const handleLogin = async (credentials) => {
       setError('Error creating product! Please try again');
     }
   };
-
-  useEffect(() => {
-    // Populate user if already logged in
-    const userFromToken = userService.getUser();
-    setUser(userFromToken);
-  }, []);
 
   return (
     <div className="app">

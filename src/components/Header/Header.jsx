@@ -12,7 +12,8 @@ function Header({ user, handleLogout }) {
 
   useEffect(() => {
     setIsOpen(false);
-  }, [location]);
+    console.log("Header user: ", user);
+  }, [location, user]);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);

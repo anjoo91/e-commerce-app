@@ -15,11 +15,12 @@ function signup(user) {
     throw new Error('Email already taken!');
   })
   // Parameter destructuring!
-  .then(({token}) => tokenService.setToken(token));
+  .then(({token}) => {
+    tokenService.setToken(token);
   // The above could have been written as
   //.then((token) => token.token);
-  window.location.reload();
-}
+  });
+}  
 
 function getUser() {
   return tokenService.getUserFromToken();
@@ -40,8 +41,9 @@ function login(creds) {
     if (res.ok) return res.json();
     throw new Error('Bad Credentials!');
   })
-  .then(({token}) => tokenService.setToken(token));
-  window.location.reload();
+  .then(({token}) => {
+    tokenService.setToken(token);
+  });
 }
 
 export default {
